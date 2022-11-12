@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+}
+
+.container{
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.flip-card,
+.flip-card__front,
+.flip-card__back{
+    height: 100%;
+    width: 100%;
+}
+
+.flip-card{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s;
+}
+
+.container:hover .flip-card{
+    transform: rotateY(180deg);
+}
+
+.flip-card__front{
+    background-color: hsl(345, 79%, 45%);
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.flip-card__back{
+    background-color: hsl(60, 67%, 57%);
+    backface-visibility: hidden;
+    position: absolute;
+    transform: rotateY(180deg);
+}
